@@ -2,8 +2,6 @@ import React from "react";
 import "./EventCard.css";
 
 function EventCard({ event }) {
-  console.log(event.classifications);
-  //const genreMapper = event.classifications.genre.map((gen) => gen.name);
   const genreName = event.classifications[0].genre.name;
   return (
     <div className="eventCard">

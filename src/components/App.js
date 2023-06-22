@@ -4,6 +4,8 @@ import NavBar from "./NavBar";
 import Header from "./Header";
 import Search from "./Search";
 import EventContainer from "./EventContainer";
+import PersonalEventContainer from "./PersonalEventContainer";
+import { Route, Switch, Link } from "react-router-dom";
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -34,8 +36,22 @@ function App() {
     <div>
       <NavBar />
       <Header />
+
       <Search search={search} setSearch={setSearch} mapper={genreMapper} handleFilter={handleFilter} />
-      <EventContainer events={filteredEvents} />
+      <nav>
+        <Link exact to="/eventcontainer">
+          Event Container
+        </Link>
+        <Link to="/personaleventcontainer">Personal Event Container</Link>
+      </nav>
+      <Switch>
+        <Route path="/eventcontainer">
+          <EventContainer events={filteredEvents} />
+        </Route>
+        <Route path="/personaleventcontainer">
+          <PersonalEventContainer />
+        </Route>
+      </Switch>
     </div>
   );
 }

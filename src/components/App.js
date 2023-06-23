@@ -81,12 +81,13 @@ function App() {
         personalEvents={personalEvents}
         handlePersonalFilter={handlePersonalFilter}
       />
-      <nav>
+      <nav className="container-titles">
         <Link exact to="/events" onClick={() => setSelectedContainer("event")}>
-          Events
+          <h3>Events</h3>
         </Link>
+        <span className="separator"></span>
         <Link exact to="/personalevents" onClick={() => setSelectedContainer("personal")}>
-          Personal Events
+          <h3>Personal Events</h3>
         </Link>
       </nav>
       <Switch>

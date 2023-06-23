@@ -8,13 +8,15 @@ function EventCard({ event }) {
   const segmentName = event.classifications[0].segment.name;
   const subGenreName = event.classifications[0].subGenre.name;
   return (
-    <div className="eventCard">
-      <h1>{event.name}</h1>
-      <img src={imgUrl} alt={event.name} />
-      <h2>Type of Event: {genreName}</h2>
-      <h2>Segment: {segmentName}</h2>
-      <h2>Sub-Genre: {subGenreName}</h2>
-    </div>
+    <main>
+      <div className="eventCard">
+        <h1>{event.name}</h1>
+        <img src={imgUrl} alt={event.name} />
+        <h2>Type of Event: {genreName}</h2>
+        <h2>Segment: {segmentName}</h2>
+        <h2>Sub-Genre: {subGenreName}</h2>
+      </div>
+    </main>
   );
 }
 

@@ -6,10 +6,10 @@ function EventContainer({ events }) {
   const eventMapper = events.map((event) => <EventCard event={event} key={event.id} />);
 
   return (
-    <>
-      <h1>Events</h1>
+    <div className="event-container">
+      <h1 className="title">Events</h1>
       <div className="event">{eventMapper}</div>
-    </>
+    </div>
   );
 }
 

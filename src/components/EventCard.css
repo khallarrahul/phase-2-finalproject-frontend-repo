@@ -1,11 +1,35 @@
-.eventCard {
-  display: flexbox;
-  border: solid 1px red;
-  flex-wrap: wrap;
-  /* width: 60%; */
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+:root {
+  --card-width: 600px; /* Adjust the card width as desired */
+  --card-height: 600px; /* Adjust the card height as desired */
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+  justify-items: center;
+  gap: var(--size-5);
+  padding: var(--size-3);
   border-radius: 8px;
 }
 
-.eventCard > * {
-  flex: 1 1 100%; /* Each child takes equal space */
+.eventCard {
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-1);
+  padding: var(--size-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+  border: solid 1px blueviolet;
+}
+
+body {
+  display: grid;
 }

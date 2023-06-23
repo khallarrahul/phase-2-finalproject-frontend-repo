@@ -1,6 +1,6 @@
 import React from "react";
 
-function FormContainer({ setEventData, eventData }) {
+function FormContainer({ setEventData, eventData, setPersonalEvents }) {
   const postEvent = (e) => {
     e.preventDefault();
     fetch("https://json-backend-y0k5.onrender.com/cardLikes&Comments", {
@@ -17,7 +17,10 @@ function FormContainer({ setEventData, eventData }) {
       }),
     })
       .then((res) => res.json())
-      .then((data) => setEventData(data));
+      .then((data) => {
+        setEventData(data);
+        setPersonalEvents((prevEvents) => [...prevEvents, data]);
+      });
   };
 
   const handleChange = (e) => {

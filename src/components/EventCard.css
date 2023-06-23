@@ -2,7 +2,7 @@
   display: flexbox;
   border: solid 1px red;
   flex-wrap: wrap;
-  width: 60%;
+  /* width: 60%; */
   border-radius: 8px;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import FormContainer from "./FormContainer";
 import PersonalEventCard from "./PersonalEventCard";
 
-function PersonalEventContainer({ personalEvents, setPersonalEvents, handleFormSubmit }) {
+function PersonalEventContainer({ personalEvents, handleFormSubmit }) {
   const personalEventsMap = personalEvents.map((personalEvent) => (
     <PersonalEventCard personalEvent={personalEvent} key={personalEvent.id} />
   ));

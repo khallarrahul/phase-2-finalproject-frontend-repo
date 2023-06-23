@@ -7,6 +7,7 @@ function FormContainer({ handleFormSubmit }) {
     date: "",
     type: "",
     img: "",
+    attendee: parseInt(""),
   });
 
   const postEvent = (e) => {
@@ -22,6 +23,7 @@ function FormContainer({ handleFormSubmit }) {
         date: eventData.date,
         type: eventData.type,
         img: eventData.img,
+        attendee: eventData.attendee,
       }),
     })
       .then((res) => res.json())
@@ -33,6 +35,7 @@ function FormContainer({ handleFormSubmit }) {
           date: "",
           type: "",
           img: "",
+          attendee: "",
         });
       });
   };

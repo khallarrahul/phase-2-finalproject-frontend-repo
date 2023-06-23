@@ -6,6 +6,7 @@ import Search from "./Search";
 import EventContainer from "./EventContainer";
 import PersonalEventContainer from "./PersonalEventContainer";
 import { Route, Switch, Link } from "react-router-dom";
+import Contact from "./Contact";
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -67,6 +68,9 @@ function App() {
   return (
     <div>
       <NavBar />
+      <Route path="/contact">
+        <Contact />
+      </Route>
       <Header />
       <Search
         mapper={genreMapper}
@@ -78,18 +82,18 @@ function App() {
         handlePersonalFilter={handlePersonalFilter}
       />
       <nav>
-        <Link exact to="/eventcontainer" onClick={() => setSelectedContainer("event")}>
-          Event Container
+        <Link exact to="/events" onClick={() => setSelectedContainer("event")}>
+          Events
         </Link>
-        <Link exact to="/personaleventcontainer" onClick={() => setSelectedContainer("personal")}>
-          Personal Event Container
+        <Link exact to="/personalevents" onClick={() => setSelectedContainer("personal")}>
+          Personal Events
         </Link>
       </nav>
       <Switch>
-        <Route path="/eventcontainer">
+        <Route path="/events">
           <EventContainer events={filteredEvents} />
         </Route>
-        <Route path="/personaleventcontainer">
+        <Route path="/personalevents">
           <PersonalEventContainer
             personalEvents={filteredPersonalEvents}
             setPersonalEvents={setPersonalEvents}

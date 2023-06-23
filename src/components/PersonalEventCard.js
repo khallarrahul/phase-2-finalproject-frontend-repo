@@ -9,6 +9,7 @@ function PersonalEventCard({ personalEvent }) {
       {/* <img src={personalEvent.img} alt={personalEvent.name} /> */}
       <h3>{personalEvent.venue}</h3>
       <h3>{personalEvent.date}</h3>
+      <h3>{personalEvent.time}</h3>
     </div>
   );
 }

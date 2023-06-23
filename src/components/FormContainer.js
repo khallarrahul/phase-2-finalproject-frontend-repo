@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-function FormContainer({ setEventData, eventData, setPersonalEvents }) {
+function FormContainer({ handleFormSubmit }) {
+  const [eventData, setEventData] = useState({
+    name: "",
+    venue: "",
+    date: "",
+    type: "",
+    img: "",
+  });
+
   const postEvent = (e) => {
     e.preventDefault();
     fetch("https://json-backend-y0k5.onrender.com/cardLikes&Comments", {
@@ -18,8 +26,14 @@ function FormContainer({ setEventData, eventData, setPersonalEvents }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setEventData(data);
-        setPersonalEvents((prevEvents) => [...prevEvents, data]);
+        handleFormSubmit(data); // Pass the new event data to the parent component
+        setEventData({
+          name: "",
+          venue: "",
+          date: "",
+          type: "",
+          img: "",
+        });
       });
   };
 
@@ -65,6 +79,7 @@ function FormContainer({ setEventData, eventData, setPersonalEvents }) {
             value={eventData.type}
             onChange={handleChange}
           />
+
           <input
             type="text"
             name="img"

@@ -1,17 +1,8 @@
-import React, { useState } from "react";
-
+import React from "react";
 import FormContainer from "./FormContainer";
 import PersonalEventCard from "./PersonalEventCard";
 
-function PersonalEventContainer({ personalEvents, setPersonalEvents }) {
-  const [eventData, setEventData] = useState({
-    name: "",
-    venue: "",
-    date: "",
-    type: "",
-    img: "",
-  });
-
+function PersonalEventContainer({ personalEvents, setPersonalEvents, handleFormSubmit }) {
   const personalEventsMap = personalEvents.map((personalEvent) => (
     <PersonalEventCard personalEvent={personalEvent} key={personalEvent.id} />
   ));
@@ -21,7 +12,7 @@ function PersonalEventContainer({ personalEvents, setPersonalEvents }) {
       <div className="personal-event">
         <h1>Personal Events</h1>
       </div>
-      <FormContainer eventData={eventData} setEventData={setEventData} setPersonalEvents={setPersonalEvents} />
+      <FormContainer handleFormSubmit={handleFormSubmit} />
       {personalEventsMap}
     </>
   );

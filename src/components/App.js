@@ -59,11 +59,15 @@ function App() {
 
   const [selectedContainer, setSelectedContainer] = useState("event");
 
+  const handleFormSubmit = (newEvent) => {
+    setPersonalEvents((prevEvents) => [...prevEvents, newEvent]);
+    setFilteredPersonalEvents((prevEvents) => [...prevEvents, newEvent]);
+  };
+
   return (
     <div>
       <NavBar />
       <Header />
-
       <Search
         mapper={genreMapper}
         search={search}
@@ -90,6 +94,7 @@ function App() {
             personalEvents={filteredPersonalEvents}
             setPersonalEvents={setPersonalEvents}
             handlePersonalFilter={handlePersonalFilter}
+            handleFormSubmit={handleFormSubmit}
           />
         </Route>
       </Switch>

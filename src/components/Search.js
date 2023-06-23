@@ -1,14 +1,19 @@
 import React from "react";
 import "./Search.css";
 
-function Search({ mapper, search, setSearch, handleFilter, selectedContainer, personalEvents }) {
+function Search({ mapper, search, setSearch, handleFilter, selectedContainer, personalEvents, handlePersonalFilter }) {
   const uniqueGenres = [...new Set(mapper)];
   const personalEventTypes = [...new Set(personalEvents.map((event) => event.type))];
 
   function handleSearch(e) {
     const selectedGenre = e.target.value;
     setSearch(selectedGenre);
-    handleFilter(selectedGenre);
+
+    if (selectedContainer === "event") {
+      handleFilter(selectedGenre);
+    } else if (selectedContainer === "personal") {
+      handlePersonalFilter(selectedGenre);
+    }
   }
 
   return (

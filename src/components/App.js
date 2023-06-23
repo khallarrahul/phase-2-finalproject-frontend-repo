@@ -5,14 +5,14 @@ import Header from "./Header";
 import Search from "./Search";
 import EventContainer from "./EventContainer";
 import PersonalEventContainer from "./PersonalEventContainer";
-import { Route, Switch, Link, useLocation } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 function App() {
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [personalEvents, setPersonalEvents] = useState([]);
-  const location = useLocation();
+  const [filteredPersonalEvents, setFilteredPersonalEvents] = useState([]);
 
   useEffect(() => {
     fetch("https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=8BqmAHsITxNV1cgQOu0fann2QF0c8oX3")
@@ -27,20 +27,37 @@ function App() {
   const genreMapper = events.map((event) => event.classifications[0].genre.name);
 
   const handleFilter = (selectedGenre) => {
-    const filtered = events.filter(
-      (event) =>
-        selectedGenre === "" || event.classifications[0].genre.name.toLowerCase() === selectedGenre.toLowerCase()
-    );
-    setFilteredEvents(filtered);
+    if (selectedContainer === "event") {
+      const filtered = events.filter(
+        (event) =>
+          selectedGenre === "" || event.classifications[0].genre.name.toLowerCase() === selectedGenre.toLowerCase()
+      );
+      setFilteredEvents(filtered);
+    } else if (selectedContainer === "personal") {
+      const filtered = personalEvents.filter(
+        (event) => selectedGenre === "" || event.type.toLowerCase() === selectedGenre.toLowerCase()
+      );
+      setFilteredPersonalEvents(filtered);
+    }
   };
 
   useEffect(() => {
     fetch("https://json-backend-y0k5.onrender.com/cardLikes&Comments")
       .then((res) => res.json())
-      .then((data) => setPersonalEvents(data));
+      .then((data) => {
+        setPersonalEvents(data);
+        setFilteredPersonalEvents(data);
+      });
   }, []);
 
-  const selectedContainer = location.pathname === "/personaleventcontainer" ? "personal" : "event";
+  const handlePersonalFilter = (selectedGenre) => {
+    const filtered = personalEvents.filter(
+      (event) => selectedGenre === "" || event.type.toLowerCase() === selectedGenre.toLowerCase()
+    );
+    setFilteredPersonalEvents(filtered);
+  };
+
+  const [selectedContainer, setSelectedContainer] = useState("event");
 
   return (
     <div>
@@ -54,13 +71,13 @@ function App() {
         handleFilter={handleFilter}
         selectedContainer={selectedContainer}
         personalEvents={personalEvents}
+        handlePersonalFilter={handlePersonalFilter}
       />
-
       <nav>
-        <Link exact to="/eventcontainer">
+        <Link exact to="/eventcontainer" onClick={() => setSelectedContainer("event")}>
           Event Container
         </Link>
-        <Link exact to="/personaleventcontainer">
+        <Link exact to="/personaleventcontainer" onClick={() => setSelectedContainer("personal")}>
           Personal Event Container
         </Link>
       </nav>
@@ -69,7 +86,11 @@ function App() {
           <EventContainer events={filteredEvents} />
         </Route>
         <Route path="/personaleventcontainer">
-          <PersonalEventContainer personalEvents={personalEvents} setPersonalEvents={setPersonalEvents} />
+          <PersonalEventContainer
+            personalEvents={filteredPersonalEvents}
+            setPersonalEvents={setPersonalEvents}
+            handlePersonalFilter={handlePersonalFilter}
+          />
         </Route>
       </Switch>
     </div>

@@ -12,8 +12,8 @@
 }
 
 .container-titles .separator {
-  width: 1px;
-  height: 1rem;
+  width: 4px;
+  height: 2rem;
   background-color: #000;
   margin: 0 0.5rem;
   align-self: center;

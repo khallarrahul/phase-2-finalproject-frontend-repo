@@ -20,7 +20,9 @@ function PersonalEventCard({ personalEvent }) {
 
   const handleClick = (value) => {
     const newAttendee = attendee + value;
-    updateAttendee(newAttendee);
+    if (newAttendee >= 0) {
+      updateAttendee(newAttendee);
+    }
   };
 
   return (

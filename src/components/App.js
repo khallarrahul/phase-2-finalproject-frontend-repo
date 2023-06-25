@@ -66,7 +66,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <NavBar />
       <Route path="/contact">
         <Contact />

@@ -18,3 +18,7 @@
   margin: 0 0.5rem;
   align-self: center;
 }
+.app {
+  max-width: 100%;
+  overflow-x: hidden;
+}

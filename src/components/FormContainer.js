@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./FormContainer.css";
 
 function FormContainer({ handleFormSubmit }) {
   const [eventData, setEventData] = useState({
@@ -50,7 +51,7 @@ function FormContainer({ handleFormSubmit }) {
 
   return (
     <>
-      <div>
+      <div className="form-container">
         <h3>Create Your Own Event</h3>
         <form onSubmit={postEvent}>
           <input

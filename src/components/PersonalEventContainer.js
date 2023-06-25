@@ -4,18 +4,16 @@ import PersonalEventCard from "./PersonalEventCard";
 import "./PersonalEventContainer.css";
 
 function PersonalEventContainer({ personalEvents, handleFormSubmit }) {
-  const personalEventsMap = personalEvents.map((personalEvent) => (
-    <PersonalEventCard personalEvent={personalEvent} key={personalEvent.id} />
-  ));
-
   return (
-    <>
-      <div className="personal-event">
-        <h1 className="title">Personal Events</h1>
-      </div>
+    <div className="personal-event">
+      <h1 className="title">Personal Events</h1>
       <FormContainer handleFormSubmit={handleFormSubmit} />
-      {personalEventsMap}
-    </>
+      <div className="personal-event-cards">
+        {personalEvents.map((personalEvent) => (
+          <PersonalEventCard personalEvent={personalEvent} key={personalEvent.id} />
+        ))}
+      </div>
+    </div>
   );
 }
 

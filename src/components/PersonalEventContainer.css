@@ -4,13 +4,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: solid 2px green;
 }
 
 .title {
   margin-bottom: 20px;
 }
 
-.event {
+.personal-event-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

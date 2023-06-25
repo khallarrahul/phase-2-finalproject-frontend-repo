@@ -1,8 +1,6 @@
 .nav-link {
-  margin-right: 10%;
-  margin-top: 3%;
   position: relative;
-  z-index: 1;
+
   padding: 10px;
 }
 

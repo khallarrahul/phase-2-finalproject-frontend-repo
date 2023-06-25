@@ -47,16 +47,22 @@ function PersonalEventCard({ personalEvent, deletePersonalEvent }) {
       <div className="personalEventCard">
         <h1>{personalEvent.name}</h1>
         <img className="image" src={personalEvent.img} alt={personalEvent.name} />
-        <h3>Type: {personalEvent.type}</h3>
-        <h3>Venue: {personalEvent.venue}</h3>
-        <h3>Date: {personalEvent.date}</h3>
+        <h2>Type: {personalEvent.type}</h2>
+        <h2>Venue: {personalEvent.venue}</h2>
+        <h2>Date: {personalEvent.date}</h2>
         <br></br>
         <div style={{ display: "flex" }}>
-          <button onClick={addAttendee}>I AM GOING</button>
-          <button onClick={subtractAttendee}>I AM NOT GOING</button>
+          <button className="btn" onClick={addAttendee}>
+            I AM GOING
+          </button>
+          <button className="btn" onClick={subtractAttendee}>
+            I AM NOT GOING
+          </button>
         </div>
-        <h3>Attendance: {attendee}</h3>
-        <button onClick={deleteCard}>Delete</button>
+        <h2>Attendance: {attendee}</h2>
+        <button className="btn" onClick={deleteCard}>
+          Delete Event
+        </button>
       </div>
     </main>
   );

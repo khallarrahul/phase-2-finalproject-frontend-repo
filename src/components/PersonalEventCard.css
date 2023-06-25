@@ -1,10 +1,10 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
-:root {
-  --card-width: 625px; /* Adjust the card width as desired */
-  --card-height: 625px; /* Adjust the card height as desired */
-}
+/* :root {
+  --card-width: 625px;
+  --card-height: 625px;
+} */
 
 main {
   display: grid;
@@ -32,4 +32,9 @@ main {
 
 body {
   display: grid;
+}
+
+.image {
+  width: 50%;
+  height: 30%;
 }

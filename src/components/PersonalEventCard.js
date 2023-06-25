@@ -32,18 +32,31 @@ function PersonalEventCard({ personalEvent }) {
       .then((data) => setAttendee(parseInt(data.attendee)));
   };
 
+  const deleteCard = () => {
+    fetch(`https://json-server-o66d.onrender.com/personalEvents/${personalEvent.id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <main>
       <div className="personalEventCard">
         <h1>{personalEvent.name}</h1>
-
+        <img className="image" src={personalEvent.img} alt={personalEvent.name} />
         <h3>Type: {personalEvent.type}</h3>
         <h3>Venue: {personalEvent.venue}</h3>
         <h3>Date: {personalEvent.date}</h3>
-        <h3>Time: {personalEvent.time}</h3>
-        <button onClick={addAttendee}>I AM GOING</button>
-        <button onClick={subtractAttendee}>I AM NOT GOING</button>
+        <br></br>
+        <div style={{ display: "flex" }}>
+          <button onClick={addAttendee}>I AM GOING</button>
+          <button onClick={subtractAttendee}>I AM NOT GOING</button>
+        </div>
         <h3>Attendance: {attendee}</h3>
+        <button onClick={deleteCard}>Delete</button>
       </div>
     </main>
   );

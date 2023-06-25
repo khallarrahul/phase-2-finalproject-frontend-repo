@@ -26,16 +26,18 @@ function PersonalEventCard({ personalEvent }) {
   };
 
   return (
-    <div className="personalEventCard">
-      <h1>{personalEvent.name}</h1>
-      <h3>{personalEvent.type}</h3>
-      <h3>{personalEvent.venue}</h3>
-      <h3>{personalEvent.date}</h3>
-      <h3>{personalEvent.time}</h3>
-      <button onClick={() => handleClick(1)}>I AM GOING</button>
-      <button onClick={() => handleClick(-1)}>I AM NOT GOING</button>
-      <h3>Attendance: {attendee}</h3>
-    </div>
+    <main>
+      <div className="personalEventCard">
+        <h1>{personalEvent.name}</h1>
+        <h3>{personalEvent.type}</h3>
+        <h3>{personalEvent.venue}</h3>
+        <h3>{personalEvent.date}</h3>
+        <h3>{personalEvent.time}</h3>
+        <button onClick={() => handleClick(1)}>I AM GOING</button>
+        <button onClick={() => handleClick(-1)}>I AM NOT GOING</button>
+        <h3>Attendance: {attendee}</h3>
+      </div>
+    </main>
   );
 }
 

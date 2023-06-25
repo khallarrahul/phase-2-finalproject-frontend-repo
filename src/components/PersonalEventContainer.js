@@ -1,6 +1,7 @@
 import React from "react";
 import FormContainer from "./FormContainer";
 import PersonalEventCard from "./PersonalEventCard";
+import "./PersonalEventContainer.css";
 
 function PersonalEventContainer({ personalEvents, handleFormSubmit }) {
   const personalEventsMap = personalEvents.map((personalEvent) => (
@@ -10,7 +11,7 @@ function PersonalEventContainer({ personalEvents, handleFormSubmit }) {
   return (
     <>
       <div className="personal-event">
-        <h1>Personal Events</h1>
+        <h1 className="title">Personal Events</h1>
       </div>
       <FormContainer handleFormSubmit={handleFormSubmit} />
       {personalEventsMap}

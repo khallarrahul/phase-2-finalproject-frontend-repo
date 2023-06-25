@@ -1,4 +1,35 @@
-.personalEventCard {
-  border: solid 1px red;
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+:root {
+  --card-width: 625px; /* Adjust the card width as desired */
+  --card-height: 625px; /* Adjust the card height as desired */
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+  justify-items: center;
+  gap: var(--size-5);
+  padding: var(--size-3);
   border-radius: 8px;
+}
+
+.personalEventCard {
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-1);
+  padding: var(--size-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+  border: solid 1px blueviolet;
+}
+
+body {
+  display: grid;
 }

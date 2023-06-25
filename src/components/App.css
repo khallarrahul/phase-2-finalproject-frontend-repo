@@ -21,4 +21,6 @@
 .app {
   max-width: 100%;
   overflow-x: hidden;
+  background: rgb(24, 20, 20);
+  background: linear-gradient(0deg, rgba(24, 20, 20, 1) 0%);
 }

@@ -36,10 +36,11 @@ function PersonalEventCard({ personalEvent }) {
     <main>
       <div className="personalEventCard">
         <h1>{personalEvent.name}</h1>
-        <h3>{personalEvent.type}</h3>
-        <h3>{personalEvent.venue}</h3>
-        <h3>{personalEvent.date}</h3>
-        <h3>{personalEvent.time}</h3>
+
+        <h3>Type: {personalEvent.type}</h3>
+        <h3>Venue: {personalEvent.venue}</h3>
+        <h3>Date: {personalEvent.date}</h3>
+        <h3>Time: {personalEvent.time}</h3>
         <button onClick={addAttendee}>I AM GOING</button>
         <button onClick={subtractAttendee}>I AM NOT GOING</button>
         <h3>Attendance: {attendee}</h3>

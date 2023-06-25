@@ -1,7 +1,15 @@
 .form-container {
   border: solid red 2px;
+  align-items: center;
+  justify-self: center;
+  display: flex;
 }
 
 h3 {
   color: white;
+}
+
+.form-input {
+  margin: 1%;
+  border: solid white;
 }

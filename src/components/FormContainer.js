@@ -73,7 +73,7 @@ function FormContainer({ handleFormSubmit }) {
             value={eventData.venue}
             onChange={handleChange}
           />
-          <input type="date" name="date" value={eventData.date} onChange={handleChange} />
+          <input type="date" name="date" value={eventData.date} onChange={handleChange} className="form-input" />
           <input
             type="text"
             name="type"

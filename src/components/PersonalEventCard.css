@@ -35,6 +35,7 @@ body {
 }
 
 .image {
-  width: 50%;
-  height: 30%;
+  width: 270px;
+  height: 170px;
+  margin: 1%;
 }

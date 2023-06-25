@@ -5,11 +5,11 @@
   justify-content: center;
   text-align: center;
   border: solid 2px green;
-  
 }
 
 .title {
   margin-bottom: 20px;
+  color: white;
 }
 
 .event {

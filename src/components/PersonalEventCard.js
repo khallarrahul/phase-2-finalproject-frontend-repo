@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./PersonalEventCard.css";
 
-function PersonalEventCard({ personalEvent }) {
+function PersonalEventCard({ personalEvent, deletePersonalEvent }) {
   const [attendee, setAttendee] = useState(personalEvent.attendee);
 
   const addAttendee = () => {
@@ -35,13 +35,13 @@ function PersonalEventCard({ personalEvent }) {
   const deleteCard = () => {
     fetch(`https://json-server-o66d.onrender.com/personalEvents/${personalEvent.id}`, {
       method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then(() => {
+        deletePersonalEvent(personalEvent.id); // Call the deletePersonalEvent function
+      });
   };
+
   return (
     <main>
       <div className="personalEventCard">

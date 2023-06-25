@@ -14,7 +14,7 @@ function App() {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [personalEvents, setPersonalEvents] = useState([]);
   const [filteredPersonalEvents, setFilteredPersonalEvents] = useState([]);
-  const [selectedContainer, setSelectedContainer] = useState("event"); // Initialize selectedContainer as "event"
+  const [selectedContainer, setSelectedContainer] = useState("event");
 
   useEffect(() => {
     fetch("https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=8BqmAHsITxNV1cgQOu0fann2QF0c8oX3")
@@ -64,6 +64,10 @@ function App() {
     setFilteredPersonalEvents((prevEvents) => [...prevEvents, newEvent]);
   };
 
+  const deletePersonalEvent = (eventId) => {
+    setFilteredPersonalEvents((prevEvents) => prevEvents.filter((event) => event.id !== eventId));
+  };
+
   return (
     <div className="app">
       <NavBar />
@@ -99,6 +103,7 @@ function App() {
             setPersonalEvents={setPersonalEvents}
             handlePersonalFilter={handlePersonalFilter}
             handleFormSubmit={handleFormSubmit}
+            deletePersonalEvent={deletePersonalEvent} // Pass the function as a prop
           />
         </Route>
       </Switch>

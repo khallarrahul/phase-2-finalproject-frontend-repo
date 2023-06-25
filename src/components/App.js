@@ -14,6 +14,7 @@ function App() {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [personalEvents, setPersonalEvents] = useState([]);
   const [filteredPersonalEvents, setFilteredPersonalEvents] = useState([]);
+  const [selectedContainer, setSelectedContainer] = useState("event"); // Initialize selectedContainer as "event"
 
   useEffect(() => {
     fetch("https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=8BqmAHsITxNV1cgQOu0fann2QF0c8oX3")
@@ -43,7 +44,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://json-backend-y0k5.onrender.com/cardLikes&Comments")
+    fetch("https://json-server-o66d.onrender.com/personalEvents")
       .then((res) => res.json())
       .then((data) => {
         setPersonalEvents(data);
@@ -57,8 +58,6 @@ function App() {
     );
     setFilteredPersonalEvents(filtered);
   };
-
-  const [selectedContainer, setSelectedContainer] = useState("event");
 
   const handleFormSubmit = (newEvent) => {
     setPersonalEvents((prevEvents) => [...prevEvents, newEvent]);
@@ -82,7 +81,7 @@ function App() {
         handlePersonalFilter={handlePersonalFilter}
       />
       <nav className="container-titles">
-        <Link exact to="/events" onClick={() => setSelectedContainer("event")}>
+        <Link exact to="/" onClick={() => setSelectedContainer("event")}>
           <h3>Events</h3>
         </Link>
         <span className="separator"></span>
@@ -91,7 +90,7 @@ function App() {
         </Link>
       </nav>
       <Switch>
-        <Route path="/events">
+        <Route exact path="/">
           <EventContainer events={filteredEvents} />
         </Route>
         <Route path="/personalevents">

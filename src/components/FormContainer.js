@@ -13,7 +13,7 @@ function FormContainer({ handleFormSubmit }) {
 
   const postEvent = (e) => {
     e.preventDefault();
-    fetch("https://json-backend-y0k5.onrender.com/cardLikes&Comments", {
+    fetch("https://json-server-o66d.onrender.com/personalEvents", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

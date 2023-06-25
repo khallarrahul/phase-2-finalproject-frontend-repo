@@ -67,10 +67,10 @@ function App() {
 
   return (
     <div className="app">
-      <NavBar />
+      {/* <NavBar />
       <Route path="/contact">
         <Contact />
-      </Route>
+      </Route> */}
       <Header />
       <Search
         mapper={genreMapper}

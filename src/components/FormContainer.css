@@ -1,8 +1,10 @@
 .form-container {
-  border: solid red 2px;
   align-items: center;
   justify-self: center;
   display: flex;
+  background-color: #343a40;
+  border: solid blueviolet 1px;
+  border-radius: var(--radius-3);
 }
 
 h3 {

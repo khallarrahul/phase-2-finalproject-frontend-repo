@@ -15,3 +15,29 @@ h3 {
   margin: 1%;
   border: solid white;
 }
+
+.submit-btn {
+  font-family: Roboto, sans-serif;
+  font-weight: 0;
+  font-size: 14px;
+  color: #fff;
+  background-color: #52319eb7;
+  padding: 10px 30px;
+  border: solid #6300cc 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 3px;
+  transition: 1000ms;
+  transform: translateY(0);
+  cursor: pointer;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.submit-btn:hover {
+  transition: 1000ms;
+  padding: 10px 50px;
+  transform: translateY(-0px);
+  background-color: #fff;
+  color: #0066cc;
+  border: solid 2px #0066cc;
+}

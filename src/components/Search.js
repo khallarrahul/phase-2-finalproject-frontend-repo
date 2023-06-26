@@ -18,7 +18,7 @@ function Search({ mapper, search, setSearch, handleFilter, selectedContainer, pe
 
   return (
     <div className="search">
-      <div className="search-text">Choose Event Category</div>
+      <div className="search-text">Choose an Event Category</div>
       <div className="search-dropdown">
         <select className="search-select" onChange={handleSearch} value={search}>
           <option value="">All Categories</option>

@@ -1,5 +1,4 @@
 .search-text {
-  border: solid red;
   color: white;
   display: flex;
   justify-content: center;
@@ -13,6 +12,7 @@
 
 .search-dropdown {
   display: flex;
+
   justify-content: center;
   height: 50px;
   background-color: #343a40;

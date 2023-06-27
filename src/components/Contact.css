@@ -1,2 +1,14 @@
+h1 {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}
+
 .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }

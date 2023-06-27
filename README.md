@@ -1,4 +1,4 @@
-# phase-2-finalproject-frontend-repo
+## phase-2-finalproject-frontend-repo
 
 # The EventMaster App
 

@@ -23,7 +23,7 @@ function EventCard({ event }) {
         <h2>Segment: {segmentName}</h2>
         <h2>Sub-Genre: {subGenreName}</h2>
         <button className="btn" onClick={copyLinkToClipboard}>
-          COPY LINK FOR MORE INFO
+          <btn>COPY LINK FOR MORE INFO</btn>
         </button>
       </div>
     </main>

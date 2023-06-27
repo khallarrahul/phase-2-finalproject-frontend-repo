@@ -1,11 +1,6 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
-/* :root {
-  --card-width: 625px;
-  --card-height: 625px;
-} */
-
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
@@ -41,7 +36,6 @@ body {
 }
 
 .btn {
-  font-family: Roboto, sans-serif;
   font-weight: 0;
   font-size: 14px;
   color: #fff;

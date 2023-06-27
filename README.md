@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# phase-2-finalproject-frontend-repo
+
+# The EventMaster App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

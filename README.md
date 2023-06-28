@@ -25,6 +25,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - HTML,CSS, Javascript and ReactJS ere used to create the UI.
 - ticketmaster api used to render events.
 - Render.com used to deploy my db.json that stores the data from Personal events.
+- Netlify.com used to deploy my frontend
 
 ## Render.com free tier
 

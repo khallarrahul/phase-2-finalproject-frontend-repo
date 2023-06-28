@@ -17,7 +17,7 @@ function App() {
   const [selectedContainer, setSelectedContainer] = useState("event");
 
   useEffect(() => {
-    fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=${process.env.REACT_APP_SECRET_KEY}`)
+    fetch(`https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=8BqmAHsITxNV1cgQOu0fann2QF0c8oX3`)
       .then((res) => res.json())
       .then((data) => {
         const attractions = data._embedded.attractions;

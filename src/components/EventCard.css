@@ -7,7 +7,7 @@ main {
   justify-items: center;
   gap: var(--size-5);
   padding: var(--size-3);
-  border-radius: 9px;
+  border-radius: 8px;
 }
 
 .eventCard {

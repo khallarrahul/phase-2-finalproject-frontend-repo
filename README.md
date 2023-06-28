@@ -49,6 +49,9 @@ This project was created as a learning exercise, and it would not have been poss
 -The web development community on Stack Overflow and MDN Web Docs for providing helpful resources and insights
 -Tickermaster api
 
+## Non technical walkthrough video
+Check video here: https://www.loom.com/share/2516fa5d67314137a3a29daccc2f29b6?sid=590ff8c9-ebb0-4ae4-84bd-b50f412036aa
+
 ## License
 
 This project is licensed under MIT license. Copyright (c) 2012-2023 Scott Chacon and others

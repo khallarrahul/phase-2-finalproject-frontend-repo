@@ -30,7 +30,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Render.com free tier
 
 -The db.json for personal events is deployed using render.com using its free tier service. Due to that, the data does not persists for longer duration and returns back to that data which I have git pushed onto my backend repo.
-Here is the link to my backend: https://github.com/khallarrahul/json-server-template
+- Here is the link to my backend: https://github.com/khallarrahul/json-server-template
 
 ## Getting started
 

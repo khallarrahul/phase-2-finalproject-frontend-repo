@@ -32,6 +32,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 -The db.json for personal events is deployed using render.com using its free tier service. Due to that, the data does not persists for longer duration and returns back to that data which I have git pushed onto my backend repo.
 - Here is the link to my backend: https://github.com/khallarrahul/json-server-template
 
+- Also, the deployed backend instance requires a spin up after the instance has been inactive for a while. (This is just a part of free tier by render.com) It is necessary for all the CRUD functionality to work.
+I would like to provide you with my backend deployed link that you might need to open once before using the Post  patch, delete in my website.
+here it is: 
+https://json-server-o66d.onrender.com/personalEvents
+
+
+
 ## Getting started
 
 - Clone the repository phase-2-finalproject-frontend-repo

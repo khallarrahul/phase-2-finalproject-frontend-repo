@@ -45,7 +45,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Acknowledgments
 
 This project was created as a learning exercise, and it would not have been possible without the resources and support of the following:
--Flatiron School community-teachers and fellow students
+
+-Flatiron School community teachers and fellow students
 -The web development community on Stack Overflow and MDN Web Docs for providing helpful resources and insights
 -Tickermaster api
 
